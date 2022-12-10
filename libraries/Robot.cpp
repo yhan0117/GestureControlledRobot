@@ -51,8 +51,10 @@ void Robot::begin() {
   Serial.println("---Place robot at origin---");
   delay(2000);
 
-  //Turn on motor switch
-  //digitalWrite(SWITCH, HIGH);
+  //Turn on motor switch (PMOS at pin 2)
+  digitalWrite(SWITCH, HIGH);
+  
+  //configurate stepper pins
   for (int i = 0; i < 4; i++) {
     pinMode(pins[L][0][i], OUTPUT);
     pinMode(pins[R][0][i], OUTPUT);
